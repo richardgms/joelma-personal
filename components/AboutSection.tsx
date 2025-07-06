@@ -12,17 +12,17 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
             {/* Header */}
-            <div>
-              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary-400 to-primary-700 rounded-full text-white text-xs sm:text-sm font-bold mb-4 sm:mb-6">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary-400 to-primary-700 rounded-full text-white text-xs sm:text-sm font-bold mb-8">
                 <Star className="w-4 h-4 mr-2" />
                 Bacharelado em Educação Física
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 text-center lg:text-left">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8">
                 Conheça a
                 <br />
                 <span className="bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent">{personalTrainerConfig.fullName}</span>
               </h2>
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed text-center lg:text-left">
+              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
                 Especialista em transformação corporal feminina. Mais de {personalTrainerConfig.clientsTransformed.replace('+', '')} mulheres já alcançaram seus objetivos comigo.
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function AboutSection() {
           </div>
 
           {/* Card 3D da Joelma */}
-          <div className="relative lg:ml-12 order-1 lg:order-2 mb-6 lg:mb-0 w-full max-w-md sm:max-w-lg lg:max-w-none">
+          <div className="relative lg:ml-12 order-1 lg:order-2 w-full max-w-md sm:max-w-lg lg:max-w-none">
             <JoelmaProfileCard />
           </div>
         </div>
