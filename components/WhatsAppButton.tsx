@@ -1,9 +1,11 @@
 'use client'
 
+import { generateWhatsAppUrl } from '@/config/personal-trainer'
+
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/5583981238895?text=Ol%C3%A1%20Michael!%20Vim%20pelo%20site%20e%20quero%20saber%20sobre%20os%20planos."
+      href={generateWhatsAppUrl('general')}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-primary-700 hover:bg-primary-400 text-white p-3 sm:p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 animate-bounce w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center"

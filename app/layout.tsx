@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import '@/components/reactbits/ProfileCard.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -104,7 +105,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-gray-900 text-white overflow-x-hidden`}>
+      <body suppressHydrationWarning className={`${inter.className} bg-gray-900 text-white overflow-x-hidden`}>
         {children}
       </body>
     </html>

@@ -1,83 +1,115 @@
 'use client'
 
 import Image from 'next/image'
+import { personalTrainerConfig, generateWhatsAppUrl } from '@/config/personal-trainer'
+import { Star, ArrowRight, Award, Users, Heart, Target, Clock, CheckCircle } from 'lucide-react'
+import JoelmaProfileCard from './JoelmaProfileCard'
 
 export default function AboutSection() {
   return (
     <section id="sobre" className="py-16 sm:py-24 lg:py-32 bg-black">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+            {/* Header */}
             <div>
               <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary-400 to-primary-700 rounded-full text-white text-xs sm:text-sm font-bold mb-4 sm:mb-6">
-                ⭐ Personal Trainer Certificado
+                <Star className="w-4 h-4 mr-2" />
+                Bacharelado em Educação Física
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 text-center lg:text-left">
-                MICHAEL
+                Conheça a
                 <br />
-                <span className="bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent">MARTINS</span>
+                <span className="bg-gradient-to-r from-primary-400 to-primary-700 bg-clip-text text-transparent">{personalTrainerConfig.fullName}</span>
               </h2>
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed text-center lg:text-left">
-                Personal Trainer especializado em transformação corporal. Expert em emagrecimento e ganho de massa muscular com metodologia científica comprovada.
+                Especialista em transformação corporal feminina. Mais de {personalTrainerConfig.clientsTransformed.replace('+', '')} mulheres já alcançaram seus objetivos comigo.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div className="bg-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-primary-400/30 hover:border-primary-400 transition-colors">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-400 rounded-lg sm:rounded-xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl mb-3 sm:mb-4">🧠</div>
-                <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 text-white">Biomecânica</h3>
-                <p className="text-sm sm:text-base text-gray-400">Ciência aplicada no movimento</p>
+            {/* Credenciais e Conquistas */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-gray-900/50 p-4 sm:p-6 rounded-xl border border-primary-400/30 hover:border-primary-400/60 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  <Award className="w-6 h-6 text-primary-400" />
+                  <span className="font-bold text-white text-sm sm:text-base">CREF Ativo</span>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-400">{personalTrainerConfig.cref}</p>
               </div>
-              <div className="bg-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-primary-700/30 hover:border-primary-700 transition-colors">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-700 rounded-lg sm:rounded-xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl mb-3 sm:mb-4">📐</div>
-                <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2 text-white">Avaliação Física</h3>
-                <p className="text-sm sm:text-base text-gray-400">Análise corporal completa</p>
+              
+              <div className="bg-gray-900/50 p-4 sm:p-6 rounded-xl border border-primary-700/30 hover:border-primary-700/60 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  <Users className="w-6 h-6 text-primary-700" />
+                  <span className="font-bold text-white text-sm sm:text-base">Instrutora i9fit</span>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-400">Santa Rita - PB</p>
               </div>
             </div>
 
+            {/* Especializações */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center lg:text-left">
+                Minhas Especializações
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                {personalTrainerConfig.specialties.map((specialty, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 bg-gray-900/30 rounded-lg border border-gray-700/30 hover:border-primary-400/30 transition-all duration-300">
+                    <CheckCircle className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                    <span className="text-white font-medium text-sm sm:text-base">{specialty}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Diferenciais */}
+            <div className="bg-gradient-to-r from-primary-400/10 to-primary-700/10 rounded-xl p-6 border border-primary-400/20">
+              <div className="flex items-center gap-3 mb-4">
+                <Heart className="w-6 h-6 text-primary-400" />
+                <h3 className="text-lg sm:text-xl font-bold text-white">Por que escolher a Joelma?</h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3">
+                  <Target className="w-5 h-5 text-primary-400" />
+                  <span className="text-gray-300 text-sm">Foco em resultados reais</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-primary-400" />
+                  <span className="text-gray-300 text-sm">Acompanhamento 24/7</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Users className="w-5 h-5 text-primary-400" />
+                  <span className="text-gray-300 text-sm">Experiência com mães</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Star className="w-5 h-5 text-primary-400" />
+                  <span className="text-gray-300 text-sm">{personalTrainerConfig.satisfactionRate} satisfação</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a 
-                href="https://wa.me/5583981238895?text=Ol%C3%A1%20Michael!%20Quero%20conhecer%20sua%20metodologia!" 
+                href={generateWhatsAppUrl('methodology')}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-primary-400 to-primary-700 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 text-center"
+                className="group bg-gradient-to-r from-primary-400 to-primary-700 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-105 text-center inline-flex items-center justify-center gap-2"
               >
-                📚 Conhecer Metodologia
+                Quero Conhecer a Metodologia
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a 
                 href="#planos" 
-                className="border-2 border-gray-600 hover:border-primary-400 text-white hover:text-primary-400 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 text-center"
+                className="border-2 border-gray-600 hover:border-primary-400 text-white hover:text-primary-400 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 text-center"
               >
                 Ver Planos
               </a>
             </div>
           </div>
 
-          <div className="relative lg:ml-12 order-1 lg:order-2 mb-6 lg:mb-0">
-            <div className="relative group">
-              <div className="relative w-full h-80 sm:h-96 mx-auto max-w-md sm:max-w-lg lg:max-w-none">
-                <Image
-                  src="/imagens/1.png"
-                  alt="Retrato profissional do personal trainer Michael"
-                  fill
-                  sizes="(min-width: 1024px) 500px, 100vw"
-                  className="object-cover rounded-2xl sm:rounded-3xl shadow-2xl border border-primary-400/30 transition-transform duration-700 group-hover:scale-105"
-                  priority
-                />
-              </div>
-              <div className="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 bg-primary-400 text-black p-3 sm:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-xl">
-                <div className="font-bold text-center">
-                  <div className="text-2xl sm:text-3xl">5+</div>
-                  <div className="text-xs sm:text-sm">Anos</div>
-                </div>
-              </div>
-              <div className="absolute -top-2 sm:-top-4 -left-2 sm:-left-4 bg-primary-700 text-white p-3 sm:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-xl">
-                <div className="font-bold text-center">
-                  <div className="text-2xl sm:text-3xl">🏆</div>
-                  <div className="text-xs sm:text-sm">Expert</div>
-                </div>
-              </div>
-            </div>
+          {/* Card 3D da Joelma */}
+          <div className="relative lg:ml-12 order-1 lg:order-2 mb-6 lg:mb-0 w-full max-w-md sm:max-w-lg lg:max-w-none">
+            <JoelmaProfileCard />
           </div>
         </div>
       </div>

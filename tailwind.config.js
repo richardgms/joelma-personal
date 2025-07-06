@@ -8,18 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: { 
-          400: '#59e8e6',
-          500: '#3bc7c5', 
-          600: '#8a4dc9', 
-          700: '#5d02b9' 
+        primary: {
+          400: '#87DFE3',
+          500: '#54D2D8',
+          600: '#3BAEB3',
+          700: '#2B8B90',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #59e8e6 0%, #5d02b9 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #87DFE3 0%, #2B8B90 100%)',
       },
       animation: {
         'fade-in': 'fade-in 0.6s ease-out',
