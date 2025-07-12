@@ -6,8 +6,8 @@ import '@/components/reactbits/ProfileCard.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Michael Martins - Personal Trainer | Transformação de Verdade',
-  description: 'Personal Trainer especializado em transformação corporal real. Consultoria online e presencial na Paraíba. Resultados de verdade para sua saúde e autoestima!',
+  title: 'Joelma Costa - Personal Trainer',
+  description: 'Personal Trainer especializada em transformação corporal real. Consultoria online e presencial na Paraíba. Resultados de verdade para sua saúde e autoestima!',
   keywords: [
     'personal trainer',
     'paraíba',
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     'ganhar músculo',
     'consultoria online',
     'treino presencial',
-    'michael martins',
+    'joelma costa',
     'personal trainer pb',
     'transformação de verdade'
   ],
-  authors: [{ name: 'Michael Martins' }],
-  creator: 'Michael Martins',
-  publisher: 'Michael Martins Personal Trainer',
+  authors: [{ name: 'Joelma Costa' }],
+  creator: 'Joelma Costa',
+  publisher: 'Joelma Costa Personal Trainer',
   robots: {
     index: true,
     follow: true,
@@ -37,21 +37,21 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://michaelfire.com.br',
-    title: 'Michael Martins - Personal Trainer | Transformação de Verdade',
+    url: 'https://joelmacosta.com.br',
+    title: 'Joelma Costa - Personal Trainer',
     description: 'Transformação corporal real com metodologia científica. Resultados de verdade para sua saúde e autoestima!',
-    siteName: 'Michael Martins Personal Trainer',
+    siteName: 'Joelma Costa Personal Trainer',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Michael Martins - Personal Trainer | Transformação de Verdade',
+    title: 'Joelma Costa - Personal Trainer',
     description: 'Transformação corporal real com metodologia científica. Resultados de verdade para sua saúde e autoestima!',
   },
   verification: {
     google: 'your-google-verification-code',
   },
   alternates: {
-    canonical: 'https://michaelfire.com.br',
+    canonical: 'https://joelmacosta.com.br',
   },
 }
 
@@ -66,8 +66,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="icon" href="/logo/monogram.png" type="image/png" />
-        <meta name="theme-color" content="#DC2626" />
-        <meta name="msapplication-TileColor" content="#DC2626" />
+        <meta name="theme-color" content="#0ec9d6" />
+        <meta name="msapplication-TileColor" content="#0ec9d6" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         
         {/* WhatsApp Meta Tags */}
@@ -82,17 +82,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Michael Fire Martins",
+              "name": "Joelma Costa",
               "jobTitle": "Personal Trainer",
-              "description": "Personal Trainer especializado em transformações corporais extremas",
-              "url": "https://michaelfire.com.br",
+              "description": "Personal Trainer especializada em transformações corporais extremas",
+              "url": "https://joelmacosta.com.br",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Santa Rita",
                 "addressRegion": "PB",
                 "addressCountry": "BR"
               },
-              "telephone": "+5583981238895",
+              "telephone": "+5583988073784",
               "offers": {
                 "@type": "Offer",
                 "itemOffered": {
