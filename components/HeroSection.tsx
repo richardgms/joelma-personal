@@ -19,17 +19,17 @@ export default function HeroSection() {
               <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-black/40 backdrop-blur-md rounded-full text-primary-500 text-xs sm:text-sm font-bold border border-primary-500/30 shadow-lg">
                 ⭐ Transformação em 30 dias
               </div>
-              <h1 className="text-6xl lg:text-8xl font-extrabold leading-none text-white tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold leading-none text-white tracking-tight">
                 TRANSFORME
                 <br />
                 <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent drop-shadow-md">SEU CORPO</span>
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
+              <p className="text-xl text-gray-300 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 {personalTrainerConfig.shortBio}
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-5">
+            <div className="flex flex-col items-center sm:flex-row sm:justify-center lg:justify-start gap-5">
               <a 
                 href={generateWhatsAppUrl('start')}
                 target="_blank" 
@@ -67,16 +67,16 @@ export default function HeroSection() {
 
           <div className="relative lg:ml-12 group mx-4 sm:mx-8 lg:mx-0 mb-6 lg:mb-0 lg:mt-16">
             <div className="relative transform transition-all duration-700 group-hover:scale-[1.02]">
-              {/* Badge/Tag acima da foto */}
-              <div className="absolute -top-4 left-8 z-10 bg-primary-500 text-white px-4 py-2 rounded-lg shadow-lg">
-                <span className="font-bold flex items-center gap-2">
-                  <span className="text-xl">🏆</span>
-                  <span>CREF: 009852-G/PB</span>
-                </span>
-              </div>
-              
               {/* Moldura da imagem */}
               <div className="relative w-full aspect-square rounded-2xl sm:rounded-3xl overflow-hidden mx-auto max-w-md sm:max-w-lg lg:max-w-none border-2 border-primary-500/50 shadow-2xl shadow-primary-500/20">
+                {/* Badge/Tag dentro da foto */}
+                <div className="absolute top-4 left-4 z-20 bg-primary-500 text-white rounded-lg shadow-lg px-[clamp(0.5rem,2.5vw,1rem)] py-[clamp(0.25rem,1.25vw,0.5rem)]">
+                  <span className="font-bold flex items-center gap-1.5 text-[clamp(0.75rem,2.5vw,1rem)]">
+                    <span className="text-[clamp(1rem,3.125vw,1.25rem)] mr-1">🏆</span>
+                    <span>CREF: 009852-G/PB</span>
+                  </span>
+                </div>
+                
                 {/* Gradiente overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                 
@@ -94,7 +94,7 @@ export default function HeroSection() {
                   <div>
                     <div className="text-white font-bold text-xl">
                       {personalTrainerConfig.fullName}
-                </div>
+              </div>
                     <div className="text-primary-400 text-sm">
                       {personalTrainerConfig.title} • Expert em Transformação
                 </div>

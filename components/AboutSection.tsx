@@ -108,7 +108,7 @@ export default function AboutSection() {
           </div>
 
           {/* Card 3D da Joelma */}
-          <div className="relative lg:ml-12 order-1 lg:order-2 w-full max-w-md sm:max-w-lg lg:max-w-none">
+          <div className="relative mx-auto lg:mx-0 lg:ml-12 order-1 lg:order-2 w-full max-w-sm sm:max-w-md lg:max-w-none">
             <JoelmaProfileCard />
           </div>
         </div>

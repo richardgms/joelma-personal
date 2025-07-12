@@ -1,47 +1,63 @@
 'use client'
 
 import { generateWhatsAppUrl } from '@/config/personal-trainer'
+import { Zap, Smartphone, ShieldCheck } from 'lucide-react';
 
 export default function CTASection() {
+  const features = [
+    {
+      icon: <Smartphone className="h-8 w-8 text-primary-400" />,
+      title: 'Contato Direto',
+      description: 'Acesso direto para tirar dúvidas.',
+    },
+    {
+      icon: <Zap className="h-8 w-8 text-primary-400" />,
+      title: 'Resultados Rápidos',
+      description: 'Metodologia focada na sua evolução.',
+    },
+    {
+      icon: <ShieldCheck className="h-8 w-8 text-primary-400" />,
+      title: 'Acompanhamento Real',
+      description: 'Suporte contínuo para seus objetivos.',
+    },
+  ];
+
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/20"></div>
+    <section id="cta" className="py-20 sm:py-28 lg:py-32 bg-black text-white relative overflow-hidden">
+      <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(0,240,255,0.1),transparent_70%)]"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8">
-          PRONTO PARA SUA
-          <br />
-          <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">TRANSFORMAÇÃO?</span>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
+          Pronto para sua <span className="text-primary-400">Transformação</span>?
         </h2>
-        <p className="text-lg sm:text-xl lg:text-2xl mb-10 sm:mb-12 lg:mb-16 max-w-2xl mx-auto font-light">
+        <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
           Não espere mais. Sua jornada de transformação começa hoje!
         </p>
         
-        <a 
-          href={generateWhatsAppUrl('start')}
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group inline-flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white px-8 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-bold text-lg sm:text-xl lg:text-2xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-2xl"
-        >
-          Começar Agora!
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </a>
+        <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+          {features.map((feature, index) => (
+            <div key={index} className="bg-gray-800/30 backdrop-blur-sm border border-primary-500/20 rounded-2xl p-6 flex flex-col items-center text-center transform transition-all duration-300 hover:bg-gray-800/50 hover:border-primary-500/40 hover:-translate-y-2">
+              <div className="mb-4">
+                {feature.icon}
+              </div>
+              <h3 className="font-bold text-lg text-white mb-2">{feature.title}</h3>
+              <p className="text-sm text-gray-400">{feature.description}</p>
+            </div>
+          ))}
+        </div>
 
-        <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-base sm:text-lg">
-          <div>
-            <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 lg:mb-4">📱</div>
-            <p className="font-bold text-sm sm:text-base">Contato Direto</p>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 lg:mb-4">⚡</div>
-            <p className="font-bold text-sm sm:text-base">Resultado Rápido</p>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 lg:mb-4">💪</div>
-            <p className="font-bold text-sm sm:text-base">Resultado Real</p>
-          </div>
+        <div className="mt-12 sm:mt-16">
+          <a 
+            href={generateWhatsAppUrl('general')}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/20"
+          >
+            Começar Agora
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-3 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
